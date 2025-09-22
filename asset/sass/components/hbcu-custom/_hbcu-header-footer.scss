@@ -5,8 +5,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-block-end: 1rem;
-  padding-block-start: 1rem;
+  padding-block-end: 1.75rem;
+  padding-block-start: 1.75rem;
   position: relative;
   background-color: $color__purple;
   background-image: url("https://conceptualg22.sg-host.com/wp-content/uploads/2025/06/Screenshot-2025-07-10-at-7.27.04%E2%80%AFAM.png");
@@ -77,28 +77,28 @@
       }
       
       img {
-        height: 40px;
+        height: 50px;
         width: auto;
         display: block;
-        
+
         @media (min-width: 768px) {
-          height: 50px;
+          height: 62px;
         }
       }
       
       .nmaahc-logo img {
-        max-width: 200px;
-        
+        max-width: 250px;
+
         @media (min-width: 768px) {
-          max-width: 250px;
+          max-width: 310px;
         }
       }
       
       .hcac-logo img {
-        max-width: 120px;
-        
+        max-width: 150px;
+
         @media (min-width: 768px) {
-          max-width: 150px;
+          max-width: 185px;
         }
       }
     }

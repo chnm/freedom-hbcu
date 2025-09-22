@@ -250,7 +250,7 @@ nav.golden-navigation {
         padding: 0 !important;
         display: flex !important;
         gap: 0;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         min-height: 50px;
         flex-wrap: nowrap;
@@ -267,7 +267,7 @@ nav.golden-navigation {
         padding: 0 !important;
         display: flex !important;
         gap: 0;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         flex-wrap: nowrap;
         flex-direction: row !important;
@@ -294,9 +294,10 @@ nav.golden-navigation {
         position: relative;
         text-decoration: none;
         color: $color__white;
-        font-weight: 600;
-        text-transform: uppercase;
+        font-weight: 500;
+        text-transform: none;
         letter-spacing: 0.5px;
+        font-size: 0.9rem;
         transition: background-color 180ms ease, color 180ms ease, border-bottom 180ms ease;
         white-space: nowrap;
         border-bottom: 3px solid transparent;
@@ -558,6 +559,9 @@ nav.elementor-nav-menu--main {
         transition: background-color 180ms ease, color 180ms ease !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        text-transform: uppercase !important;
+        font-size: 0.8rem !important;
+        letter-spacing: 0.5px !important;
     }
 
     .elementor-nav-menu > li > .sub-menu > li > a:hover,
