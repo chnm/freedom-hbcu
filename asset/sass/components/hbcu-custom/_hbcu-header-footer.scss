@@ -232,6 +232,247 @@
   }
 }
 
+/* Sponsor Logos Section */
+.sponsor-section {
+    padding: 2rem 0;
+    border-top: 1px solid #e0e0e0;
+    display: block;
+    visibility: visible;
+    text-align: center;
+}
+
+.sponsor-section .elementor-heading-title {
+    color: rgb(173, 44, 76);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    display: block;
+}
+
+.sponsor-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.sponsor-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-logo img {
+    height: 60px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    display: block;
+    visibility: visible;
+}
+
+.sponsor-logo img:hover {
+    opacity: 1;
+}
+
+/* Main Footer Section (Purple with background image) */
+.main-footer-section {
+    background-color: #612A60; /* Purple background fallback */
+    background-image: url('../img/background-footer.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 3rem;
+}
+
+/* Push navigation to the right */
+.footer-navigation {
+    margin-left: auto;
+}
+
+/* Stacked Footer Logos */
+.footer-logos {
+    flex-shrink: 0;
+}
+
+.footer-logo-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo-stack a {
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.footer-logo-stack a:hover {
+    opacity: 1;
+}
+
+.footer-logo-stack img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.nmaahc-footer-logo img {
+    max-width: 200px;
+}
+
+.hcac-footer-logo img {
+    max-width: 120px;
+}
+
+/* White divider line between footer logos */
+.footer-logo-divider {
+    width: 120px; /* Make wider */
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0.5rem 0;
+}
+
+/* Footer Navigation */
+.footer-navigation {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: flex-end; /* Push content to the right */
+    margin-left: auto;
+}
+
+.footer-nav-section {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.footer-nav-section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #EDAA16; /* Golden header color */
+    margin: 0 0 0.75rem 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.footer-nav-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav-section li {
+    margin: 0 0 0.3rem 0;
+}
+
+.footer-nav-section a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 400;
+}
+
+.footer-nav-section a:hover {
+    color: #EDAA16; /* Golden hover color */
+}
+
+/* Red Bar Section (e-con-inner) */
+.footer-red-bar {
+    background-color: #AD2C4C; /* Berry/red color */
+    padding: 1rem 0;
+    margin-top: 0;
+}
+
+.red-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+.footer-links .separator {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin: 0 0.5rem;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: block;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+.social-links img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1); /* Make icons white */
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+}
+
 // Mobile navigation toggle styles removed
 // Hide any mobile menu dropdowns
 .site-navigation-dropdown {
