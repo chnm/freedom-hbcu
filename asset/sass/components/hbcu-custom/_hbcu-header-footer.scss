@@ -3,13 +3,13 @@
 
 .site-header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  padding-block-end: 1.75rem;
-  padding-block-start: 1.75rem;
+  align-items: center;
+  height: 150px;
+  padding: 0 2rem;
   position: relative;
   background-color: $color__purple;
-  background-image: url("https://conceptualg22.sg-host.com/wp-content/uploads/2025/06/Screenshot-2025-07-10-at-7.27.04%E2%80%AFAM.png");
+  background-image: url('../img/background-header.png');
   
   // Fallback if main image doesn't load, try simpler gradient
   @supports not (background-image: url("https://conceptualg22.sg-host.com/wp-content/uploads/2025/06/Screenshot-2025-07-10-at-7.27.04%E2%80%AFAM.png")) {
@@ -46,25 +46,14 @@
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    max-width: 60%;
     
     .partner-logos {
       display: flex;
-      align-items: center;
-      gap: 3rem;
+      gap: 2rem;
       position: relative;
       
-      // Light divider line between logos
-      &::after {
-        content: '';
-        position: absolute;
-        left: calc(50% + 30px); // Move further away from NMAAHC logo
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1px;
-        height: 70px; // Make even taller
-        background-color: rgba(255, 255, 255, 0.5);
-        z-index: 1;
-      }
+      // Remove the old divider - we'll put it on the HBCU logo instead
       
       a {
         display: block;
@@ -77,28 +66,33 @@
       }
       
       img {
-        height: 50px;
+        height: 62px;
         width: auto;
         display: block;
 
         @media (min-width: 768px) {
-          height: 62px;
+          height: 96px;
         }
       }
       
       .nmaahc-logo img {
-        max-width: 250px;
+        max-width: 310px;
 
         @media (min-width: 768px) {
-          max-width: 310px;
+          max-width: 390px;
         }
       }
-      
-      .hcac-logo img {
-        max-width: 150px;
 
-        @media (min-width: 768px) {
+      .hcac-logo {
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        padding-left: 2rem;
+
+        img {
           max-width: 185px;
+
+          @media (min-width: 768px) {
+            max-width: 235px;
+          }
         }
       }
     }
@@ -107,19 +101,21 @@
   .header-inner {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    
-    // Layout: logos (flex-shrink-0), navigation (flex-grow-1), search (margin-left-auto)
+    height: 100%;
+    width: 100%;
+
+    // Layout: logos on left, spacer, nav+search on right
     .site-branding {
       flex-shrink: 0;
     }
-    
-    .site-navigation {
-      flex-grow: 1;
-    }
-    
-    .header-search {
+
+    // Push the actual elementor navigation to the right
+    nav.elementor-nav-menu--main {
       margin-left: auto;
+      margin-right: 1rem;
+    }
+
+    .header-search {
       flex-shrink: 0;
     }
     
