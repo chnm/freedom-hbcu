@@ -10,61 +10,61 @@
   position: relative;
   background-color: $color__purple;
   background-image: url('../img/background-header.png');
-  
+
   // Fallback if main image doesn't load, try simpler gradient
   @supports not (background-image: url("https://conceptualg22.sg-host.com/wp-content/uploads/2025/06/Screenshot-2025-07-10-at-7.27.04%E2%80%AFAM.png")) {
-    background-image: linear-gradient(135deg, 
-      rgba(97, 42, 96, 1) 0%, 
-      rgba(123, 33, 159, 1) 50%, 
-      rgba(97, 42, 96, 1) 100%
-    );
+    background-image: linear-gradient(135deg,
+        rgba(97, 42, 96, 1) 0%,
+        rgba(123, 33, 159, 1) 50%,
+        rgba(97, 42, 96, 1) 100%);
   }
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: $color__white;
-  
+
   // No overlay needed - background image has the colors we need
-  
+
   .site-title {
     font-size: 2.5rem;
     font-weight: 500;
     line-height: 1.2;
     color: $color__white;
-    
+
     a {
       color: inherit;
       text-decoration: none;
-      
+
       &:hover {
         color: $color__off-white;
       }
     }
   }
-  
+
   .site-branding {
     display: flex;
     align-items: center;
     flex-shrink: 0;
     max-width: 60%;
-    
+
     .partner-logos {
       display: flex;
       gap: 2rem;
       position: relative;
-      
+
       // Remove the old divider - we'll put it on the HBCU logo instead
-      
+
       a {
         display: block;
         opacity: 0.9;
         transition: opacity 0.2s ease;
-        
+
         &:hover {
           opacity: 1;
         }
       }
-      
+
       img {
         height: 62px;
         width: auto;
@@ -74,7 +74,7 @@
           height: 96px;
         }
       }
-      
+
       .nmaahc-logo img {
         max-width: 310px;
 
@@ -97,7 +97,7 @@
       }
     }
   }
-  
+
   .header-inner {
     display: flex;
     align-items: center;
@@ -118,36 +118,37 @@
     .header-search {
       flex-shrink: 0;
     }
-    
+
     .custom-logo-link {
       display: block;
     }
-    
+
     .site-branding {
+
       .site-description,
       .site-title {
         margin: 0;
       }
-      
+
       .site-logo img {
         display: block;
       }
-      
+
       &.show-logo .site-title,
       &.show-title .site-logo {
         display: none !important;
       }
     }
   }
-  
+
   &.header-inverted .header-inner {
     flex-direction: row-reverse;
-    
+
     .site-branding {
       text-align: end;
     }
   }
-  
+
   &.header-stacked .header-inner {
     align-items: center;
     flex-direction: column;
@@ -159,73 +160,74 @@
   padding-block-end: 1rem;
   padding-block-start: 1rem;
   position: relative;
-  
+
   .site-title {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.2;
   }
-  
+
   .site-branding {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     justify-content: center;
   }
-  
+
   .footer-inner {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
+
     .custom-logo-link {
       display: block;
     }
-    
+
     .site-branding {
+
       .site-description,
       .site-title {
         margin: 0;
       }
-      
+
       .site-logo img {
         display: block;
       }
-      
+
       &.show-logo .site-title,
       &.show-title .site-logo {
         display: none !important;
       }
     }
-    
+
     .copyright {
       align-items: center;
       display: flex;
       justify-content: flex-end;
-      
+
       p {
         margin: 0;
       }
     }
   }
-  
+
   &.footer-inverted .footer-inner {
     flex-direction: row-reverse;
-    
+
     .site-branding {
       text-align: end;
     }
   }
-  
+
   &.footer-stacked .footer-inner {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    
+
     .site-branding .site-title {
       text-align: center;
     }
-    
+
     .site-navigation .menu {
       padding: 0;
     }
@@ -234,243 +236,250 @@
 
 /* Sponsor Logos Section */
 .sponsor-section {
-    padding: 2rem 0;
-    border-top: 1px solid #e0e0e0;
-    display: block;
-    visibility: visible;
-    text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid #e0e0e0;
+  display: block;
+  visibility: visible;
+  text-align: center;
 }
 
 .sponsor-section .elementor-heading-title {
-    color: rgb(173, 44, 76);
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 1.5rem 0;
-    text-align: center;
-    display: block;
+  color: rgb(173, 44, 76);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  display: block;
 }
 
 .sponsor-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .sponsor-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sponsor-logo img {
-    height: 60px;
-    width: auto;
-    max-width: 150px;
-    object-fit: contain;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-    display: block;
-    visibility: visible;
+  height: 60px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  display: block;
+  visibility: visible;
 }
 
 .sponsor-logo img:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Main Footer Section (Purple with background image) */
 .main-footer-section {
-    background-color: #612A60; /* Purple background fallback */
-    background-image: url('../img/background-footer.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    padding: 2rem 0;
-    position: relative;
+  background-color: #612A60;
+  /* Purple background fallback */
+  background-image: url('../img/background-footer.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 2rem 0;
+  position: relative;
 }
 
 .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    gap: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 3rem;
 }
 
 /* Push navigation to the right */
 .footer-navigation {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 /* Stacked Footer Logos */
 .footer-logos {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .footer-logo-stack {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .footer-logo-stack a {
-    display: block;
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
 }
 
 .footer-logo-stack a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .footer-logo-stack img {
-    height: 40px;
-    width: auto;
-    display: block;
+  height: auto;
+  width: 160px;
+  display: block;
 }
 
 .nmaahc-footer-logo img {
-    max-width: 200px;
+  max-width: 200px;
 }
 
 .hcac-footer-logo img {
-    max-width: 120px;
+  max-width: 200px;
 }
 
 /* White divider line between footer logos */
 .footer-logo-divider {
-    width: 120px; /* Make wider */
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.5);
-    margin: 0.5rem 0;
+  width: 120px;
+  /* Make wider */
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0.5rem 0;
 }
 
 /* Footer Navigation */
 .footer-navigation {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    justify-content: flex-end; /* Push content to the right */
-    margin-left: auto;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: flex-end;
+  /* Push content to the right */
+  margin-left: auto;
 }
 
 .footer-nav-section {
-    display: flex;
-    flex-direction: column;
-    min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
 }
 
 .footer-nav-section h4 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #EDAA16; /* Golden header color */
-    margin: 0 0 0.75rem 0;
-    padding: 0;
-    text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  color: #EDAA16;
+  /* Golden header color */
+  margin: 0 0 0.75rem 0;
+  padding: 0;
+  text-transform: uppercase;
 }
 
 .footer-nav-section ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-nav-section li {
-    margin: 0 0 0.3rem 0;
+  margin: 0 0 0.3rem 0;
 }
 
 .footer-nav-section a {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    transition: color 0.2s ease;
-    font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 400;
 }
 
 .footer-nav-section a:hover {
-    color: #EDAA16; /* Golden hover color */
+  color: #EDAA16;
+  /* Golden hover color */
 }
 
 /* Red Bar Section (e-con-inner) */
 .footer-red-bar {
-    background-color: #AD2C4C; /* Berry/red color */
-    padding: 1rem 0;
-    margin-top: 0;
+  background-color: #AD2C4C;
+  /* Berry/red color */
+  padding: 1rem 0;
+  margin-top: 0;
 }
 
 .red-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .footer-links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .footer-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
-    transition: opacity 0.2s ease;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: opacity 0.2s ease;
 }
 
 .footer-links a:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .footer-links .separator {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 14px;
-    margin: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin: 0 0.5rem;
 }
 
 .footer-right {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .social-links {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .social-links a {
-    display: block;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
+  display: block;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
 }
 
 .social-links a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .social-links img {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1); /* Make icons white */
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  /* Make icons white */
 }
 
 .copyright p {
-    margin: 0;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 400;
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
 }
 
 // Mobile navigation toggle styles removed
@@ -482,25 +491,25 @@
 .site-navigation {
   align-items: center;
   display: flex;
-  
+
   ul.menu,
   ul.menu ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
-  
+
   ul.menu {
     display: flex;
     align-items: center;
     gap: 1.5rem; // Reduced from 2rem to give more space
     flex-wrap: nowrap; // Keep items on one line
-    
+
     li {
       display: inline-block;
       position: relative;
       flex-shrink: 0; // Prevent shrinking
-      
+
       a {
         display: inline-block;
         padding: 8px 12px; // Reduced from 15px to 12px
@@ -511,16 +520,16 @@
         white-space: nowrap; // Keep text on one line
         font-size: 0.9rem; // Slightly smaller font
         line-height: 1.2;
-        
+
         &:hover,
         &:focus {
           color: $color__white;
         }
       }
-      
+
       &.menu-item-has-children {
         padding-inline-end: 15px;
-        
+
         &:after {
           align-items: center;
           color: #666;
@@ -530,21 +539,21 @@
           justify-content: center;
           text-decoration: none;
         }
-        
-        &:focus-within > ul {
+
+        &:focus-within>ul {
           display: block;
         }
       }
-      
+
       // Dropdown functionality removed
     }
   }
-  
+
   // Header search styles  
   .header-search {
     display: flex;
     align-items: center;
-    
+
     a.search-icon-link {
       display: flex !important;
       align-items: center !important;
@@ -558,7 +567,7 @@
       border-radius: 50% !important;
       background-color: rgba(255, 255, 255, 0.1) !important;
       border: 1px solid rgba(255, 255, 255, 0.2) !important;
-      
+
       &:hover,
       &:focus,
       &:active,
@@ -569,12 +578,12 @@
         transform: scale(1.05) !important;
         text-decoration: none !important;
       }
-      
+
       &:focus {
         outline: 2px solid $color__gold !important;
         outline-offset: 2px !important;
       }
-      
+
       i,
       .fa,
       .fa-search {
@@ -599,6 +608,7 @@ body.user-bar {
 // Mobile responsiveness
 @media (max-width: 576px) {
   .site-footer:not(.footer-stacked) .footer-inner {
+
     .copyright,
     .site-branding,
     .site-navigation {
@@ -607,10 +617,10 @@ body.user-bar {
       text-align: center;
       width: 100%;
     }
-    
+
     .site-navigation ul.menu {
       justify-content: center;
-      
+
       li {
         display: inline-block;
       }
