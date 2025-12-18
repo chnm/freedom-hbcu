@@ -4,16 +4,27 @@
     display: inline-block;
     width: 40px;
     height: 40px;
-    background: url(../img/iiif.png) no-repeat;
-    background-size: cover;
+    background: url(../img/iiif.png) no-repeat center center;
+    background-size: contain;
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
+    order: -1; // Move to top in flex containers
+    align-self: flex-start;
+    margin-bottom: 1rem;
 }
 
 .iiif-copy:hover {
     -webkit-filter: grayscale(0);
     filter: none;
     background-color: #cdcdcd;
+}
+
+// Ensure IIIF button appears near the top of metadata
+.metadata .iiif-copy,
+dl .iiif-copy {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 button,

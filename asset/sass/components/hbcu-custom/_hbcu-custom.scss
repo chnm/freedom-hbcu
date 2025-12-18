@@ -109,3 +109,29 @@ a {
   font-weight: 900;
   letter-spacing: 1px;
 }
+
+// Pullout quote styling
+.blocks-inner h4.pullout-quote {
+  color: #ad2c4c;
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// Also apply to pullout-quote class anywhere in blocks
+.blocks-inner .pullout-quote {
+  color: #ad2c4c;
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
