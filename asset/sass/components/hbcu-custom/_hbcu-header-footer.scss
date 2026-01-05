@@ -10,6 +10,7 @@
   position: relative;
   background-color: $color__purple;
   background-image: url('../img/background-header.png');
+  font-family: 'Open Sans', sans-serif;
 
   // Fallback if main image doesn't load, try simpler gradient
   @supports not (background-image: url("https://conceptualg22.sg-host.com/wp-content/uploads/2025/06/Screenshot-2025-07-10-at-7.27.04%E2%80%AFAM.png")) {
@@ -241,6 +242,7 @@
   display: block;
   visibility: visible;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .sponsor-section .elementor-heading-title {
@@ -294,6 +296,7 @@
   color: white;
   padding: 2rem 0;
   position: relative;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .footer-inner {
@@ -412,6 +415,7 @@
   /* Berry/red color */
   padding: 1rem 0;
   margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .red-bar-content {
