@@ -1,30 +1,29 @@
 /* Custom IIIF button */
 .iiif-copy {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: url(../img/iiif.png) no-repeat center center;
-    background-size: contain;
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1);
-    order: -1; // Move to top in flex containers
-    align-self: flex-start;
-    margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url(../img/iiif.png) no-repeat center center;
+  background-size: contain;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  order: -1; // Move to top in flex containers
+  align-self: flex-start;
+  margin-bottom: 1rem;
 }
 
 .iiif-copy:hover {
-    -webkit-filter: grayscale(0);
-    filter: none;
-    background-color: #cdcdcd;
+  -webkit-filter: grayscale(0);
+  filter: none;
 }
 
 // Ensure IIIF button appears near the top of metadata
 .metadata .iiif-copy,
 dl .iiif-copy {
-    display: block;
-    margin-top: 0;
-    margin-bottom: 1rem;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 button,
@@ -32,64 +31,63 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    @include primary-button;
+  @include primary-button;
 
-    &.btn--secondary {
-        @include secondary-button;
+  &.btn--secondary {
+    @include secondary-button;
+  }
+
+  &.link-style {
+    background-color: transparent !important;
+    color: $color__link;
+    padding-left: 0;
+    padding-right: 0;
+    text-transform: none;
+    text-decoration: underline;
+  }
+
+  &.icon-btn {
+    padding: 0;
+    background-color: transparent !important;
+    color: $color__buttons;
+    font-size: 1.7rem;
+    line-height: 1;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color__primary-dark;
     }
 
-    &.link-style {
-        background-color: transparent !important;
-        color: $color__link;
-        padding-left: 0;
-        padding-right: 0;
-        text-transform: none;
-        text-decoration: underline;
+    &:disabled,
+    &[disabled] &.disabled {
+      color: $color__disabled;
     }
-
-    &.icon-btn {
-        padding: 0;
-        background-color: transparent !important;
-        color: $color__buttons;
-        font-size: 1.7rem;
-        line-height: 1;
-
-        &:hover,
-        &:active,
-        &:focus {
-            color: $color__primary-dark;
-        }
-
-        &:disabled,
-        &[disabled]
-        &.disabled {
-            color: $color__disabled;
-        }
-    }
+  }
 }
 
 button.add-value,
 button.remove-value {
-    background-color: $color__white;
-    border: 1px solid $color__hr;
-    border-radius: 50%;
-    cursor: pointer;
-    color: $color__primary;
-    width: 35px;
-    height: 35px;
-    padding: 5px 9px;
-    text-transform: uppercase;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    flex-shrink: 0;
+  background-color: $color__white;
+  border: 1px solid $color__hr;
+  border-radius: 50%;
+  cursor: pointer;
+  color: $color__primary;
+  width: 35px;
+  height: 35px;
+  padding: 5px 9px;
+  text-transform: uppercase;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  flex-shrink: 0;
 
-    &:hover,
-    &:focus {
-        background-color: $color__primary !important;
-        color: $color__white;
-    }
+  &:hover,
+  &:focus {
+    background-color: $color__primary !important;
+    color: $color__white;
+  }
 }
 
 .button {
-    cursor: pointer;
+  cursor: pointer;
 }

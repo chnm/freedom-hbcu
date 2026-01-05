@@ -11,6 +11,7 @@
   background-color: $color__purple;
   background-image: url('../img/background-header.png');
   font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
 
   // Fallback if main image doesn't load, try simpler gradient
   @supports not (background-image: url("https://conceptualg22.sg-host.com/wp-content/uploads/2025/06/Screenshot-2025-07-10-at-7.27.04%E2%80%AFAM.png")) {
@@ -72,7 +73,7 @@
         display: block;
 
         @media (min-width: 768px) {
-          height: 96px;
+          height: 68px;
         }
       }
 
@@ -258,8 +259,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  max-width: 1200px;
+  gap: 4rem;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -271,9 +272,9 @@
 }
 
 .sponsor-logo img {
-  height: 60px;
+  height: 80px;
   width: auto;
-  max-width: 150px;
+  max-width: 200px;
   object-fit: contain;
   opacity: 0.8;
   transition: opacity 0.3s ease;
@@ -303,10 +304,10 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 /* Push navigation to the right */
@@ -338,16 +339,16 @@
 
 .footer-logo-stack img {
   height: auto;
-  width: 160px;
+  width: 200px;
   display: block;
 }
 
 .nmaahc-footer-logo img {
-  max-width: 200px;
+  max-width: 250px;
 }
 
 .hcac-footer-logo img {
-  max-width: 200px;
+  max-width: 250px;
 }
 
 /* White divider line between footer logos */
@@ -422,7 +423,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
