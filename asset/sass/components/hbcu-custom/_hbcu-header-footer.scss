@@ -11,7 +11,7 @@
   background-color: $color__purple;
   background-image: url('../img/background-header.png');
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
+  font-size: 18px;
 
   // Fallback if main image doesn't load, try simpler gradient
   @supports not (background-image: url("https://conceptualg22.sg-host.com/wp-content/uploads/2025/06/Screenshot-2025-07-10-at-7.27.04%E2%80%AFAM.png")) {
@@ -248,7 +248,7 @@
 
 .sponsor-section .elementor-heading-title {
   color: rgb(173, 44, 76);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   margin: 0 0 1.5rem 0;
   text-align: center;
@@ -378,13 +378,14 @@
 }
 
 .footer-nav-section h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #EDAA16;
   /* Golden header color */
   margin: 0 0 0.75rem 0;
   padding: 0;
   text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .footer-nav-section ul {
@@ -398,11 +399,12 @@
 }
 
 .footer-nav-section a {
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: color 0.2s ease;
   font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .footer-nav-section a:hover {
@@ -437,9 +439,10 @@
 .footer-links a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   transition: opacity 0.2s ease;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .footer-links a:hover {
@@ -448,8 +451,9 @@
 
 .footer-links .separator {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
+  font-size: 16px;
   margin: 0 0.5rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .footer-right {
@@ -482,9 +486,10 @@
 
 .copyright p {
   margin: 0;
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
 }
 
 // Mobile navigation toggle styles removed

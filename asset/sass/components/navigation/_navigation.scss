@@ -173,7 +173,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        width: 100vw;
+        width: 100%;
         left: 0;
 
         >li {
@@ -238,7 +238,7 @@ nav.golden-navigation {
   position: relative;
   z-index: 100;
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
+  font-size: 18px;
 
   // Reset any inherited list styles on the actual ul and li elements
   ul {
@@ -476,6 +476,7 @@ nav.golden-navigation {
 nav.elementor-nav-menu--main {
   position: relative;
   z-index: 200;
+  font-family: 'Open Sans', sans-serif;
 
   .elementor-nav-menu {
     list-style: none;
@@ -499,6 +500,7 @@ nav.elementor-nav-menu--main {
     text-decoration: none;
     color: $color__white;
     font-weight: 600;
+    font-size: 18px;
     text-transform: none;
     letter-spacing: 0.5px;
     transition: color 0.2s ease;
