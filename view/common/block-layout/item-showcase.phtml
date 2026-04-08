@@ -17,7 +17,7 @@ $decoration = $this->themeSetting('image_decoration');
             if (is_array($decoration) && in_array('media', $decoration)) {
                 $mediaClass .= ' decoration';
             }
-            echo $item->linkRaw($this->thumbnail($media, $this->thumbnailType), null, ['class' => $mediaClass]);
+            echo $item->linkRaw($this->thumbnail($media, $this->thumbnailType), null, ['class' => $mediaClass, 'aria-label' => $item->displayTitle()]);
         endif;
         ?>
         <div class="item-showcase__content">
