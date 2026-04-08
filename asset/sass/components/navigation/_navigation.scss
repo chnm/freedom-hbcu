@@ -240,6 +240,11 @@ nav.golden-navigation {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
 
+  // Hide on tablet/mobile — replaced by mobile overlay
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
   // Reset any inherited list styles on the actual ul and li elements
   ul {
     list-style: none !important;

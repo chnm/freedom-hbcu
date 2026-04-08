@@ -5,7 +5,7 @@
 <?php endif; ?>
 
 <header class="site-header">
-	
+
 	<div class="header-inner">
 		<div class="site-branding">
 			<div class="partner-logos">
@@ -16,11 +16,15 @@
 					<img src="<?php echo $this->assetUrl('img/HCAC_RBG_Reverse-Logo.png'); ?>" alt="HBCU History and Culture Access Consortium" />
 				</a>
 			</div>
-			
+
 			<?php // Site title/logo hidden - using partner logos only ?>
 		</div>
 
-		<?php // Mobile menu toggle removed ?>
+		<button class="mobile-menu-toggle" aria-label="<?php echo $translate('Toggle menu'); ?>" aria-expanded="false" aria-controls="mobile-nav-overlay">
+			<span class="hamburger-bar"></span>
+			<span class="hamburger-bar"></span>
+			<span class="hamburger-bar"></span>
+		</button>
 
 		<nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-none">
 			<ul id="menu-1-3d476ee" class="elementor-nav-menu" data-smartmenus-id="17575211647447925">
@@ -83,9 +87,9 @@
 			</a>
 		</div>
 	</div>
-
-	<?php // Mobile menu dropdown removed ?>
 </header>
+
+<div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true"></div>
 
 <?php // Golden navigation bar below header ?>
 <nav class="golden-navigation" aria-label="Main navigation">
