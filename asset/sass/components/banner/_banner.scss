@@ -68,11 +68,23 @@
         color: $color__white;
         font-size: $font__h1-base-size;
         max-width: 800px;
+
+        @media (max-width: 767px) {
+            font-size: 1.5rem;
+        }
     }
 
     &__description {
         font-size: 1.5625rem;
         max-width: 800px;
         margin-bottom: 0;
+
+        @media (max-width: 767px) {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+        min-height: 300px !important;
     }
 }

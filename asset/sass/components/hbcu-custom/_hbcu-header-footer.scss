@@ -28,6 +28,18 @@
 
   // No overlay needed - background image has the colors we need
 
+  // Tablet header scaling
+  @media (max-width: 1024px) {
+    height: 100px;
+    padding: 0 1.5rem;
+  }
+
+  // Phone header scaling
+  @media (max-width: 767px) {
+    height: 80px;
+    padding: 0 1rem;
+  }
+
   .site-title {
     font-size: 2.5rem;
     font-weight: 500;
@@ -50,10 +62,22 @@
     flex-shrink: 0;
     max-width: 60%;
 
+    @media (max-width: 767px) {
+      max-width: 80%;
+    }
+
     .partner-logos {
       display: flex;
       gap: 2rem;
       position: relative;
+
+      @media (max-width: 1024px) {
+        gap: 1.5rem;
+      }
+
+      @media (max-width: 767px) {
+        gap: 1rem;
+      }
 
       // Remove the old divider - we'll put it on the HBCU logo instead
 
@@ -75,6 +99,10 @@
         @media (min-width: 768px) {
           height: 68px;
         }
+
+        @media (max-width: 767px) {
+          height: 36px;
+        }
       }
 
       .nmaahc-logo img {
@@ -83,17 +111,33 @@
         @media (min-width: 768px) {
           max-width: 390px;
         }
+
+        @media (max-width: 767px) {
+          max-width: 180px;
+        }
       }
 
       .hcac-logo {
         border-left: 1px solid rgba(255, 255, 255, 0.5);
         padding-left: 2rem;
 
+        @media (max-width: 1024px) {
+          padding-left: 1.5rem;
+        }
+
+        @media (max-width: 767px) {
+          padding-left: 1rem;
+        }
+
         img {
           max-width: 185px;
 
           @media (min-width: 768px) {
             max-width: 235px;
+          }
+
+          @media (max-width: 767px) {
+            max-width: 110px;
           }
         }
       }
@@ -115,10 +159,23 @@
     nav.elementor-nav-menu--main {
       margin-left: auto;
       margin-right: 1rem;
+
+      // Hide on tablet/mobile - replaced by overlay
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
 
     .header-search {
       flex-shrink: 0;
+
+      @media (max-width: 767px) {
+        a.search-icon-link {
+          width: 34px !important;
+          height: 34px !important;
+          font-size: 15px !important;
+        }
+      }
     }
 
     .custom-logo-link {
@@ -156,6 +213,168 @@
     flex-direction: column;
     text-align: center;
   }
+}
+
+// Hamburger toggle button
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  z-index: 1001;
+
+  @media (max-width: 1024px) {
+    display: flex;
+  }
+
+  .hamburger-bar {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: $color__white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  // Animate to X when open
+  &.is-active {
+    .hamburger-bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}
+
+// Mobile Navigation Overlay
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color__purple;
+  background-image: url('../img/background-header.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1000;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 100px 2rem 2rem;
+  font-family: 'Open Sans', sans-serif;
+
+  @media (max-width: 767px) {
+    padding-top: 80px;
+  }
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-nav-menu > li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .mobile-nav-menu > li > a {
+    display: block;
+    padding: 16px 0;
+    color: $color__white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .mobile-nav-menu > li > a:hover {
+    color: $color__gold;
+  }
+
+  // Items with children: flex layout for link + toggle button
+  .mobile-nav-menu > li.menu-item-has-children {
+    display: flex;
+    flex-wrap: wrap;
+
+    > a {
+      flex: 1;
+    }
+  }
+
+  // Submenu toggle button
+  .mobile-submenu-toggle {
+    background: none;
+    border: none;
+    color: $color__gold;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 16px 0 16px 16px;
+    display: flex;
+    align-items: center;
+
+    .mobile-submenu-icon {
+      display: block;
+      width: 24px;
+      text-align: center;
+      line-height: 1;
+    }
+  }
+
+  // Sub-menus
+  .sub-menu {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 8px 1rem;
+
+    li a {
+      display: block;
+      padding: 10px 0;
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 400;
+
+      &:hover {
+        color: $color__gold;
+      }
+    }
+  }
+
+  // Hide indicator spans cloned from desktop nav
+  .toggle-icon,
+  .sub-arrow {
+    display: none;
+  }
+}
+
+// Lock body scroll when overlay is open
+body.mobile-nav-open {
+  overflow: hidden;
 }
 
 .site-footer {
@@ -263,6 +482,12 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    padding: 0 1rem;
+  }
 }
 
 .sponsor-logo {
@@ -280,6 +505,11 @@
   transition: opacity 0.3s ease;
   display: block;
   visibility: visible;
+
+  @media (max-width: 767px) {
+    height: 50px;
+    max-width: 140px;
+  }
 }
 
 .sponsor-logo img:hover {
@@ -308,6 +538,13 @@
   margin: 0 auto;
   padding: 0 2rem;
   gap: 4rem;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
 }
 
 /* Push navigation to the right */
@@ -318,6 +555,10 @@
 /* Stacked Footer Logos */
 .footer-logos {
   flex-shrink: 0;
+
+  @media (max-width: 767px) {
+    text-align: center;
+  }
 }
 
 .footer-logo-stack {
@@ -341,14 +582,26 @@
   height: auto;
   width: 200px;
   display: block;
+
+  @media (max-width: 767px) {
+    width: 160px;
+  }
 }
 
 .nmaahc-footer-logo img {
   max-width: 250px;
+
+  @media (max-width: 767px) {
+    max-width: 200px;
+  }
 }
 
 .hcac-footer-logo img {
   max-width: 250px;
+
+  @media (max-width: 767px) {
+    max-width: 200px;
+  }
 }
 
 /* White divider line between footer logos */
@@ -369,29 +622,76 @@
   justify-content: flex-end;
   /* Push content to the right */
   margin-left: auto;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    margin-left: 0;
+  }
 }
 
 .footer-nav-section {
   display: flex;
   flex-direction: column;
   min-width: 120px;
+
+  @media (max-width: 767px) {
+    min-width: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
 }
 
-.footer-nav-section h4 {
+// Footer accordion toggle buttons — styled like h4 on desktop
+.footer-accordion-toggle {
+  background: none;
+  border: none;
+  cursor: default;
   font-size: 18px;
   font-weight: 600;
   color: #EDAA16;
-  /* Golden header color */
   margin: 0 0 0.75rem 0;
   padding: 0;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .footer-toggle-icon {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    cursor: pointer;
+    padding: 1rem 0;
+    margin: 0;
+
+    .footer-toggle-icon {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 700;
+      color: $color__gold;
+      line-height: 1;
+    }
+  }
 }
 
-.footer-nav-section ul {
+.footer-nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 767px) {
+    display: none;
+    padding-bottom: 0.75rem;
+
+    &.is-open {
+      display: block;
+    }
+  }
 }
 
 .footer-nav-section li {
@@ -428,12 +728,24 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
 }
 
 .footer-links {
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 767px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 .footer-links a {
@@ -460,11 +772,20 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 .social-links {
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
 }
 
 .social-links a {
@@ -490,10 +811,14 @@
   color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
   font-family: 'Open Sans', sans-serif;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+    text-align: center;
+  }
 }
 
-// Mobile navigation toggle styles removed
-// Hide any mobile menu dropdowns
+// Hide any mobile menu dropdowns (legacy)
 .site-navigation-dropdown {
   display: none !important;
 }
@@ -559,7 +884,7 @@
     }
   }
 
-  // Header search styles  
+  // Header search styles
   .header-search {
     display: flex;
     align-items: center;
