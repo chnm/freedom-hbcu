@@ -62,7 +62,7 @@ if (is_array($decoration) && in_array('media', $decoration)) {
                 <!-- Thumbnail -->
                 <?php if ($showThumbnail) : ?>
                     <div class="resource__thumbnail <?php echo $decorationClass; ?>">
-                        <?php echo $resource->linkRaw($this->thumbnail($resource, 'large')); ?>
+                        <?php echo $resource->linkRaw($this->thumbnail($resource, 'large'), null, ['aria-label' => $heading]); ?>
                     </div>
                 <?php endif; ?>
 

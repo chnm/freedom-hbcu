@@ -66,7 +66,7 @@ foreach ($values as $term => $propertyData):
                 $class[] = 'uri';
             }
             ?>
-            <dd class="<?php echo implode(' ', $class); ?>" lang="<?php echo $escape($valueLang); ?>">
+            <dd class="<?php echo implode(' ', $class); ?>"<?php if ($valueLang): ?> lang="<?php echo $escape($valueLang); ?>"<?php endif; ?>>
                 <?php if ($showLocale && $valueLang) : ?>
                     <span class="language"><?php echo $valueLang; ?></span>
                 <?php endif; ?>

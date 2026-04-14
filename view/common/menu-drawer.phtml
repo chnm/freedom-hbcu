@@ -5,9 +5,10 @@
 			<a href="."
 				id="menu-backer"
 				class="menu-backer is-empty"
-				title="<?php $this->translate( 'Close Menu' ); ?>"
+				title="<?php echo $this->translate( 'Close Menu' ); ?>"
+				aria-label="<?php echo $this->translate( 'Close Menu' ); ?>"
 			>
-				<?php $this->translate( 'Close Menu' ); ?>
+				<span class="screen-reader-text"><?php echo $this->translate( 'Close Menu' ); ?></span>
 			</a>
 		</div><!-- .navigation-controls -->
 
