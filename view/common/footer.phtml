@@ -108,7 +108,34 @@ foreach ( $socialNetworks as $social_network ) {
 		</div>
 	</div>
 
-	<!-- Section 3: Red Bar (Copyright & Links) -->
+	<!-- Section 3: Newsletter Signup & Social -->
+	<div class="footer-newsletter-section">
+		<div class="newsletter-inner">
+			<?php if ($hasSocialNetworks): ?>
+				<div class="footer-social-icons">
+					<?php foreach ( $socialNetworks as $social_network ): ?>
+						<?php if ( $social_network_url = $this->themeSetting( "{$social_network}_url" ) ): ?>
+							<a href="<?php echo $social_network_url; ?>" aria-label="<?php echo $escAttr( ucfirst($social_network) ); ?>" target="_blank">
+								<img src="<?php echo $this->assetUrl( "img/{$social_network}.svg" ); ?>"
+									alt="<?php echo $escAttr( ucfirst($social_network) ); ?>">
+							</a>
+						<?php endif; ?>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
+
+			<div class="newsletter-signup">
+				<h3 class="newsletter-heading">STAY UP TO DATE WITH THE HCAC!</h3>
+				<form class="newsletter-form" action="https://hbcudigitalarchive.org/" method="get">
+					<label for="newsletter-email" class="sr-only">Email address</label>
+					<input type="email" id="newsletter-email" name="email" placeholder="Enter your email here" required>
+					<button type="submit">SUBSCRIBE</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Section 4: Red Bar (Copyright & Links) -->
 	<div class="footer-red-bar e-con-inner">
 		<div class="red-bar-content">
 			<div class="footer-links">
@@ -119,23 +146,8 @@ foreach ( $socialNetworks as $social_network ) {
 				<a href="https://www.si.edu/privacy" target="_blank" rel="noopener">Privacy</a>
 			</div>
 
-			<div class="footer-right">
-				<?php if ($hasSocialNetworks): ?>
-					<div class="social-links">
-						<?php foreach ( $socialNetworks as $social_network ): ?>
-							<?php if ( $social_network_url = $this->themeSetting( "{$social_network}_url" ) ): ?>
-								<a href="<?php echo $social_network_url; ?>" aria-label="<?php echo $escAttr( ucfirst($social_network) ); ?>" target="_blank">
-									<img src="<?php echo $this->assetUrl( "img/{$social_network}.svg" ); ?>"
-										alt="<?php echo $escAttr( ucfirst($social_network) ); ?>">
-								</a>
-							<?php endif; ?>
-						<?php endforeach; ?>
-					</div>
-				<?php endif; ?>
-
-				<div class="copyright">
-					<p>&copy; <?php echo date('Y'); ?> HBCU History and Culture Access Consortium. All rights reserved.</p>
-				</div>
+			<div class="copyright">
+				<p>&copy; <?php echo date('Y'); ?> HBCU History and Culture Access Consortium. All rights reserved.</p>
 			</div>
 		</div>
 	</div>
