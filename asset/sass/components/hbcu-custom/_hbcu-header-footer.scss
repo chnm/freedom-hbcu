@@ -597,10 +597,10 @@ body.mobile-nav-open {
 }
 
 .hcac-footer-logo img {
-  max-width: 160px;
+  max-width: 120px;
 
   @media (max-width: 767px) {
-    max-width: 130px;
+    max-width: 100px;
   }
 }
 
@@ -859,20 +859,26 @@ body.mobile-nav-open {
 }
 
 .social-links a {
-  display: block;
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  opacity: 0.9;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
 }
 
 .social-links a:hover {
   opacity: 1;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .social-links img {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   filter: brightness(0) invert(1);
-  /* Make icons white */
 }
 
 .copyright p {
