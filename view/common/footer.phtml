@@ -106,44 +106,40 @@ foreach ( $socialNetworks as $social_network ) {
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Section 3: Newsletter Signup & Social -->
-	<div class="footer-newsletter-section">
-		<div class="newsletter-inner">
-			<?php if ($hasSocialNetworks): ?>
-				<div class="footer-social-icons">
-					<?php foreach ( $socialNetworks as $social_network ): ?>
-						<?php if ( $social_network_url = $this->themeSetting( "{$social_network}_url" ) ): ?>
-							<a href="<?php echo $social_network_url; ?>" aria-label="<?php echo $escAttr( ucfirst($social_network) ); ?>" target="_blank">
-								<img src="<?php echo $this->assetUrl( "img/{$social_network}.svg" ); ?>"
-									alt="<?php echo $escAttr( ucfirst($social_network) ); ?>">
-							</a>
-						<?php endif; ?>
-					<?php endforeach; ?>
-				</div>
-			<?php endif; ?>
-
-			<div class="newsletter-signup">
-				<h3 class="newsletter-heading">STAY UP TO DATE WITH THE HCAC!</h3>
-				<form class="newsletter-form" action="https://hbcudigitalarchive.org/" method="get">
-					<label for="newsletter-email" class="sr-only">Email address</label>
-					<input type="email" id="newsletter-email" name="email" placeholder="Enter your email here" required>
-					<button type="submit">SUBSCRIBE</button>
-				</form>
-			</div>
+		<div class="footer-newsletter">
+			<h3 class="newsletter-heading">STAY UP TO DATE WITH THE HCAC!</h3>
+			<form class="newsletter-form" action="https://hbcudigitalarchive.org/" method="get">
+				<label for="newsletter-email" class="sr-only">Email address</label>
+				<input type="email" id="newsletter-email" name="email" placeholder="Enter your email here" required>
+				<button type="submit">SUBSCRIBE</button>
+			</form>
 		</div>
 	</div>
 
-	<!-- Section 4: Red Bar (Copyright & Links) -->
+	<!-- Section 3: Red Bar (Copyright & Links) -->
 	<div class="footer-red-bar e-con-inner">
 		<div class="red-bar-content">
-			<div class="footer-links">
-				<a href="https://artsandculture.google.com/partner/national-museum-of-african-american-history-and-culture" target="_blank" rel="noopener">Google Arts & Culture</a>
-				<span class="separator">|</span>
-				<a href="https://www.si.edu/termsofuse" target="_blank" rel="noopener">Terms of Use</a>
-				<span class="separator">|</span>
-				<a href="https://www.si.edu/privacy" target="_blank" rel="noopener">Privacy</a>
+			<div class="red-bar-left">
+				<div class="social-links">
+					<a href="https://www.facebook.com/NMAAHC" aria-label="Facebook" target="_blank">
+						<img src="<?php echo $this->assetUrl('img/facebook.svg'); ?>" alt="Facebook">
+					</a>
+					<a href="https://www.instagram.com/nmaahc/" aria-label="Instagram" target="_blank">
+						<img src="<?php echo $this->assetUrl('img/instagram.svg'); ?>" alt="Instagram">
+					</a>
+					<a href="https://www.youtube.com/@hcac_nmaahc" aria-label="YouTube" target="_blank">
+						<img src="<?php echo $this->assetUrl('img/youtube.svg'); ?>" alt="YouTube">
+					</a>
+				</div>
+
+				<div class="footer-links">
+					<a href="https://artsandculture.google.com/partner/national-museum-of-african-american-history-and-culture" target="_blank" rel="noopener">Google Arts & Culture</a>
+					<span class="separator">|</span>
+					<a href="https://www.si.edu/termsofuse" target="_blank" rel="noopener">Terms of Use</a>
+					<span class="separator">|</span>
+					<a href="https://www.si.edu/privacy" target="_blank" rel="noopener">Privacy</a>
+				</div>
 			</div>
 
 			<div class="copyright">
