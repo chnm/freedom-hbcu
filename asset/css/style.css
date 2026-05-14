@@ -1774,7 +1774,7 @@ nav.golden-navigation .golden-nav-menu .navigation > li > a {
   padding: 15px 20px;
   position: relative;
   text-decoration: none;
-  color: #fff;
+  color: var(--purple);
   font-weight: 500;
   text-transform: none;
   letter-spacing: 0.5px;
@@ -1783,11 +1783,11 @@ nav.golden-navigation .golden-nav-menu .navigation > li > a {
   border-bottom: 3px solid transparent;
 }
 nav.golden-navigation .golden-nav-menu a:hover {
-  color: #fff;
+  color: var(--purple);
 }
 nav.golden-navigation .golden-nav-menu .navigation > li:has(> ul) > a::after {
   content: "+";
-  color: #fff;
+  color: var(--purple);
   display: inline-block;
   margin-left: 8px;
   font-weight: 700;
@@ -1797,7 +1797,7 @@ nav.golden-navigation .golden-nav-menu .navigation > li:has(> ul) > a::after {
 nav.golden-navigation .golden-nav-menu .navigation > li:hover:has(> ul) > a::after,
 nav.golden-navigation .golden-nav-menu .navigation > li:focus-within:has(> ul) > a::after {
   content: "−";
-  color: #fff;
+  color: var(--purple);
 }
 nav.golden-navigation .golden-nav-menu ul {
   list-style: none !important;
@@ -1830,7 +1830,7 @@ nav.golden-navigation .golden-nav-menu .navigation li:focus-within > ul {
 nav.golden-navigation .golden-nav-menu li ul li a {
   display: block !important;
   padding: 10px 14px !important;
-  color: #fff !important;
+  color: var(--purple) !important;
   text-decoration: none !important;
   white-space: nowrap;
   border-radius: 4px;
@@ -1842,7 +1842,7 @@ nav.golden-navigation .golden-nav-menu li ul li a {
 }
 nav.golden-navigation .golden-nav-menu li ul li a:hover,
 nav.golden-navigation .golden-nav-menu li ul li a:focus {
-  color: #fff !important;
+  color: var(--purple) !important;
   text-decoration: underline !important;
 }
 nav.golden-navigation .golden-nav-menu > li > ul > li {
@@ -4263,6 +4263,12 @@ a {
   text-decoration: none;
 }
 
+.sticky-header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -5030,7 +5036,7 @@ body.mobile-nav-open {
 }
 
 .footer-links a:hover {
-  opacity: 0.8;
+  text-decoration: underline;
 }
 
 .footer-links .separator {
