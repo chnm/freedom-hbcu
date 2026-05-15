@@ -1,6 +1,12 @@
 // HBCU Header and Footer Styles
 // Direct styles from header-footer.css to match WordPress theme
 
+.sticky-header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .site-header {
   display: flex;
   justify-content: space-between;
