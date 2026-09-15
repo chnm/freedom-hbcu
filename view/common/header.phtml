@@ -91,7 +91,8 @@
 
 <?php // Golden navigation bar below header ?>
 <nav class="golden-navigation" aria-label="Main navigation">
-	<div class="golden-nav-container">
+	<button class="golden-nav-toggle" aria-expanded="false" aria-controls="golden-nav-container"><?php echo $translate('Browse the Archive'); ?></button>
+	<div class="golden-nav-container" id="golden-nav-container">
 		<ul class="golden-nav-menu">
 			<?php
 			echo $site->publicNav()->menu()->renderMenu(null, [

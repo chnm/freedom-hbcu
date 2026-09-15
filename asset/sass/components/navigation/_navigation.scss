@@ -240,8 +240,8 @@ nav.golden-navigation {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
 
-  // Hide on tablet/mobile — replaced by mobile overlay
-  @media (max-width: 1024px) {
+  // Toggle button: mobile only
+  .golden-nav-toggle {
     display: none;
   }
 
@@ -313,7 +313,7 @@ nav.golden-navigation {
     padding: 15px 20px;
     position: relative;
     text-decoration: none;
-    color: $color__white;
+    color: $color__purple;
     font-weight: 500;
     text-transform: none;
     letter-spacing: 0.5px;
@@ -323,13 +323,13 @@ nav.golden-navigation {
   }
 
   .golden-nav-menu a:hover {
-    color: $color__white;
+    color: $color__purple;
   }
 
   // Plus indicator for items with sub-menus
   .golden-nav-menu .navigation>li:has(> ul)>a::after {
     content: "+";
-    color: $color__white;
+    color: $color__purple;
     display: inline-block;
     margin-left: 8px;
     font-weight: 700;
@@ -340,7 +340,7 @@ nav.golden-navigation {
   .golden-nav-menu .navigation>li:hover:has(> ul)>a::after,
   .golden-nav-menu .navigation>li:focus-within:has(> ul)>a::after {
     content: "\2212";
-    color: $color__white;
+    color: $color__purple;
   }
 
   // Nested submenu styles - ensure they're hidden by default
@@ -383,7 +383,7 @@ nav.golden-navigation {
   .golden-nav-menu li ul li a {
     display: block !important;
     padding: 10px 14px !important;
-    color: $color__white !important;
+    color: $color__purple !important;
     text-decoration: none !important;
     white-space: nowrap;
     border-radius: 4px;
@@ -396,7 +396,7 @@ nav.golden-navigation {
 
   .golden-nav-menu li ul li a:hover,
   .golden-nav-menu li ul li a:focus {
-    color: $color__white !important;
+    color: $color__purple !important;
     text-decoration: underline !important;
   }
 
@@ -446,32 +446,85 @@ nav.golden-navigation {
     transform: translateX(0);
   }
 
-  // mobile: stack, no hover dropdowns
-  @media (max-width: 768px) {
-    .golden-nav-menu {
-      flex-direction: column;
+  // Mobile/tablet: gold bar becomes a toggle that drops a stacked list below it
+  @media (max-width: 1024px) {
+    .golden-nav-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 12px 1rem;
+      background: none;
+      border: none;
+      color: $color__purple;
+      font: inherit;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+
+      &::after {
+        content: "+";
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      &[aria-expanded="true"]::after {
+        content: "\2212";
+      }
+    }
+
+    .golden-nav-container {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      padding: 0;
+      background: $color__gold;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      max-height: calc(100vh - 140px);
+      overflow-y: auto;
+    }
+
+    &.is-open .golden-nav-container {
+      display: block;
+    }
+
+    .golden-nav-menu,
+    .golden-nav-menu ul.navigation {
+      flex-direction: column !important;
       align-items: stretch;
       min-height: auto;
     }
 
-    .golden-nav-menu>li>a {
-      padding: 12px 20px;
-      border-bottom: 1px solid rgba($color__white, 0.1);
+    .golden-nav-menu li,
+    .golden-nav-menu .navigation>li {
+      display: block !important;
     }
 
-    .golden-nav-menu>li>ul {
-      position: static;
-      transform: none !important;
-      visibility: visible;
-      opacity: 1;
+    .golden-nav-menu a,
+    .golden-nav-menu .navigation>li>a {
+      display: block !important;
+      padding: 12px 1rem;
+      border-bottom: 1px solid rgba($color__purple, 0.25);
+    }
+
+    // Sub-menus always shown inline, indented
+    .golden-nav-menu .navigation li ul,
+    .golden-nav-menu .navigation li:hover>ul,
+    .golden-nav-menu .navigation li:focus-within>ul {
+      display: block !important;
+      position: static !important;
+      padding: 0 0 0 1rem !important;
+      background: none;
       box-shadow: none;
-      background: rgba($color__white, 0.05);
-      padding: 0 0 0 14px;
       min-width: 0;
-      border-top: none;
+      width: auto;
+      max-width: none;
     }
 
-    .golden-nav-menu>li:has(> ul)>a::after {
+    .golden-nav-menu .navigation>li:has(> ul)>a::after {
       display: none;
     }
   }
