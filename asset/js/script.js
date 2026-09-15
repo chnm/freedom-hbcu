@@ -205,6 +205,20 @@ if (document.readyState === 'loading') {
     });
 })();
 
+// Golden (Omeka) nav toggle on mobile
+(function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        var nav = document.querySelector('.golden-navigation');
+        var btn = nav && nav.querySelector('.golden-nav-toggle');
+        if (!btn) return;
+
+        btn.addEventListener('click', function() {
+            var open = nav.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', String(open));
+        });
+    });
+})();
+
 // Footer Accordion on Mobile
 (function() {
     document.addEventListener('DOMContentLoaded', function() {

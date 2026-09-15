@@ -279,7 +279,8 @@
   background-image: url('../img/background-header.png');
   background-size: cover;
   background-position: center;
-  z-index: 1000;
+  // Below .sticky-header-wrapper (1000) so the header, and its hamburger/X, stay clickable above the overlay
+  z-index: 999;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   opacity: 0;
@@ -378,9 +379,13 @@
   }
 }
 
-// Lock body scroll when overlay is open
+// Lock body scroll when overlay is open; hide the gold bar so it doesn't sit over the overlay
 body.mobile-nav-open {
   overflow: hidden;
+
+  .golden-navigation {
+    display: none;
+  }
 }
 
 .site-footer {
